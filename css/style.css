@@ -52,6 +52,14 @@ header img{
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  body{
+    max-width: 1200px;
+    width: 70%;
+    margin: auto;
+  }
+}
+
 /**
     Header_Menu
 
@@ -171,7 +179,9 @@ main{
 
 .carte_plat{
   margin-left: 20px;
-  padding-right: 10px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .carte_plat_type{
@@ -280,37 +290,54 @@ main{
 
 .plat_description{
   margin: 16px 0 16px 16px;
-    text-overflow: ellipsis;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: auto;
-    width: auto;
-    max-width: 70%;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  width: auto;
+  max-width: 70%;
+}
+
+.plat_description_titre{
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: auto;
+  white-space: nowrap;
+  width: auto;
+}
+
+.plat_description_info{
+  color: #6e6e6e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: auto;
+  white-space: nowrap;
 }
 
 .plat_prix{
   font-weight: bold;
-    display: flex;
-    align-items: flex-end;
-    margin-right: 16px;
-    margin-top: 32px;
-    width: 10%;
-    height: auto;
-    transform-origin: right;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 16px;
+  margin-top: 32px;
+  width: 10%;
+  height: auto;
+  transform-origin: right;
 }
 
 .ajoutplat{
   position: absolute;
-    right: -64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 64px;
-    height: 100%;
-    background-color: #99E2D0;
-    transform-origin: right;
-    color: white;
+  right: -64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 100%;
+  background-color: #99E2D0;
+  transform-origin: right;
+  color: white;
 }
 
 .menu_bouton{
@@ -319,6 +346,8 @@ main{
   background: linear-gradient(to top left, #9356DC, #FF79DA);
   border: none;
   border-radius: 60px;
+  display: flex;
+  margin: auto;
 }
 
 .menu_bouton a{
@@ -442,6 +471,7 @@ main{
 }
 
 .Restaurants figcaption{
+  position: relative;
   background-color: #fff;
   padding-left: 12px;
   padding-top: 14px;
@@ -450,15 +480,12 @@ main{
   border-bottom-right-radius: 20px;
 }
 
-.Restaurants figcaption span{
-  position: relative;
-  float: right;
-  margin-right: 20px;
-  margin-top: -40px;
-}
 
-.Restaurants figcaption span i{
+.Restaurants figcaption i{
   font-size: 30px;
+  position: absolute;
+  right: 0;
+  top: 24px;
 }
 
 .Restaurants figcaption p{
@@ -486,6 +513,7 @@ main{
 .Restaurants_coeur{
   opacity: 1;
   z-index: 50;
+  margin-right: 12px;
 }
 
 .Restaurants_coeur:hover{
@@ -517,6 +545,7 @@ main{
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-right: 12px;
 }
 
 /**
@@ -558,4 +587,28 @@ footer li a{
 footer li i{
   color: #fff;
   padding-right: 10px;
+}
+
+
+/**
+    RESPONSIVE
+    DESIGN
+
+            **/
+
+@media (min-width: 1024px) {
+  .Restaurants{
+    margin-bottom: 0;
+  }
+
+  footer{
+    margin-top: -22px;
+  }
+  header .logo {
+    width: 20%;
+    margin-left: 40%;
+  }
+  .fonctionnement{
+    width: 50%;
+  }
 }
