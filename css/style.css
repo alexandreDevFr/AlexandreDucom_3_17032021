@@ -14,6 +14,11 @@ Secondaire (Pink) : #FF79DA
 Tertiaire (green) : #99E2D0
 
                           **/
+
+/** -> COLOR
+
+shadow boutton; number_functionnement 123; point ancrage plat_description 350px
+                            **/
 html,body{
   margin: 0;
   padding: 0;
@@ -30,6 +35,7 @@ header{
   background-color: #fff;
   text-align: center;
   box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 1);
+  position: relative;
 }
 
 header i{
@@ -54,11 +60,84 @@ header img{
 
 @media (min-width: 1024px) {
   body{
-    max-width: 1200px;
+    max-width: 1800px;
     width: 70%;
     margin: auto;
   }
 }
+
+.loading {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeout 0s 2s forwards;
+}
+
+.loading__spinner {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #9356DC;
+  animation: loader 0.8s backwards infinite;
+}
+
+@media (min-width: 1024px) {
+  .loading__spinner {
+    position: fixed;
+    top: 48%;
+    left: 48%;
+  }
+}
+
+.loading__spinner2 {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #FF79DA;
+  animation: loader 0.8s 0.4s backwards infinite;
+}
+
+@media (min-width: 1024px) {
+  .loading__spinner2 {
+    position: fixed;
+    top: 48%;
+    left: 48%;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -10;
+  }
+}
+
 
 /**
     Header_Menu
@@ -107,12 +186,18 @@ header img{
   background: linear-gradient(to top left, #9356DC, #FF79DA);
   border: none;
   border-radius: 60px;
+  box-shadow: 1px 1px 5px grey;
 }
 
 .button_welcome button a{
   font-size: 22px;
   text-decoration: none;
   color: #fff;
+}
+
+.button_welcome button:hover{
+  background: linear-gradient(to top left, #a16be0, #ff93e1);
+  box-shadow: 3px 3px 5px grey;
 }
 
 /**
@@ -180,8 +265,7 @@ main{
 .carte_plat{
   margin-left: 20px;
   padding-right: 20px;
-  display: flex;
-  justify-content: space-between;
+  animation: transitiontopY 0.7s;
 }
 
 .carte_plat_type{
@@ -241,6 +325,41 @@ main{
   transform-origin: bottom;
 }
 
+
+
+
+.carte_plat{
+  opacity:0;
+  -moz-animation: anim 0.5s linear forwards 3s;
+  -webkit-animation: anim 0.5s linear forwards 3s;
+  -o-animation: anim 0.5s linear forwards 3s;
+  -ms-animation: anim 0.5s linear forwards 3s;
+  animation: anim 0.5s linear forwards 3s;
+}
+@keyframes anim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes anim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}@keyframes anim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes anim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes anim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+
+
+
 .plat{
   height: 80px;
   background-color: white;
@@ -257,6 +376,7 @@ main{
 
 .plat:hover {
   cursor: pointer;
+  transition: transform 1s;
 }
 .plat:hover > .ajoutplat {
   transform: translateX(-64px);
@@ -276,16 +396,8 @@ main{
   white-space: nowrap;
   animation: widthtext 1s forwards;
   animation-delay: -0.5s;
-}
-.plat_description {
-  margin: 16px 0 16px 16px;
-  text-overflow: ellipsis;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: auto;
-  width: auto;
-  max-width: 70%;
+  width: calc( 70% - 28px);
+  transition: transform 1s;
 }
 
 .plat_description{
@@ -297,6 +409,7 @@ main{
   height: auto;
   width: auto;
   max-width: 70%;
+  transition: animation 1s;
 }
 
 .plat_description_titre{
@@ -348,6 +461,7 @@ main{
   border-radius: 60px;
   display: flex;
   margin: auto;
+  box-shadow: 1px 1px 5px grey;
 }
 
 .menu_bouton a{
@@ -356,6 +470,11 @@ main{
   color: #fff;
   padding-left: 60px;
   padding-right: 60px;
+}
+
+.menu_bouton button:hover{
+  background: linear-gradient(to top left, #a16be0, #ff93e1);
+  box-shadow: 3px 3px 5px grey;
 }
 
 .transitiontopY1{
@@ -406,8 +525,8 @@ main{
   background-color: #9356DC;
   color: #fff;
   border-radius: 100px;
-  position: relative;
-  left: -90px;
+  position: absolute;
+  left: 4.5%;
 }
 
 .number_fonctionnement2{
@@ -419,8 +538,8 @@ main{
   background-color: #9356DC;
   color: #fff;
   border-radius: 100px;
-  position: relative;
-  left: -99px;
+  position: absolute;
+  left: 4.5%;
 }
 
 .fonctionnement i{
@@ -597,18 +716,101 @@ footer li i{
             **/
 
 @media (min-width: 1024px) {
-  .Restaurants{
-    margin-bottom: 0;
-  }
-
-  footer{
-    margin-top: -22px;
+  body{
+    max-width: 1200px;
+    width: 70%;
+    margin: auto;
   }
   header .logo {
     width: 20%;
     margin-left: 40%;
   }
+  footer{
+    margin-top: -22px;
+  }
   .fonctionnement{
     width: 50%;
+  }
+  .fonctionnement{
+    width: 100%;
+  }
+  .fonctionnement ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  .number_fonctionnement{
+    left: 18%;
+  }
+  .number_fonctionnement2{
+    left: 18%;
+  }
+  .fonctionnement i{
+    margin: 0 32px 0 0px;
+  }
+  .Restaurants{
+    margin-bottom: 0;
+  }
+  .Restaurants_desktop{
+    padding-bottom: 50px;
+  }
+  .plat:hover > .plat_description {
+    width: calc( 70% - 18px);
+  }
+}
+
+@media (max-width: 420px){
+  .number_fonctionnement{
+    display: none;
+  }
+
+  .number_fonctionnement2{
+  display: none;
+  }
+  .text_fonctionnement{
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 320px){
+  .text_fonctionnement{
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1280px){
+  .Restaurants_desktop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .Restaurants figure{
+    max-width: 450px;
+    margin: 0;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 1400px){
+  .carte_plat{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1650px){
+  .fonctionnement ul{
+    display: block;
+  }
+}
+
+@media (min-width: 1650px){
+  .number_fonctionnement{
+    position: relative;
+    left: -20px;
+  }
+  .number_fonctionnement2{
+    position: relative;
+    left: -20px;
   }
 }
