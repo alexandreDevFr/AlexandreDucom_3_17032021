@@ -177,24 +177,21 @@ header img{
 .button_welcome h3{
   font-weight: 300;
   margin-bottom: 12px;
+  padding-bottom: 32px;
 }
 
-.button_welcome button{
-  margin-top: 40px;
+.button_welcome a{
   padding: 16px;
+  font-size: 22px;
   background: linear-gradient(to top left, #9356DC, #FF79DA);
   border: none;
   border-radius: 60px;
   box-shadow: 1px 1px 5px grey;
-}
-
-.button_welcome button a{
-  font-size: 22px;
   text-decoration: none;
   color: #fff;
 }
 
-.button_welcome button:hover{
+.button_welcome a:hover{
   background: linear-gradient(to top left, #a16be0, #ff93e1);
   box-shadow: 3px 3px 5px grey;
 }
