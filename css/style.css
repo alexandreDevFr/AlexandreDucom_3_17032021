@@ -481,7 +481,8 @@ main{
 
 .fonctionnement ul{
   list-style-type: none;
-  padding-inline-start: 0px;
+  /** padding-inline-start: 0px; **/
+  margin-left: -50px;
 }
 
 .fonctionnement li{
