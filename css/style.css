@@ -321,9 +321,6 @@ main{
   transform-origin: bottom;
 }
 
-
-
-
 .carte_plat{
   opacity:0;
   -moz-animation: anim 0.5s linear forwards 3s;
@@ -336,10 +333,6 @@ main{
   0% {opacity:0;}
   100% {opacity:1;}
 }
-
-
-
-
 
 .plat{
   height: 80px;
@@ -572,6 +565,7 @@ main{
   border-top-right-radius: 20px;
   height: 240px;
   object-fit: cover;
+  width: 100%;
 }
 
 .Restaurants figcaption{
@@ -691,6 +685,10 @@ footer li a{
 footer li i{
   color: #fff;
   padding-right: 10px;
+}
+
+footer li .space_ul{
+  margin-left: -6px;
 }
 
 
