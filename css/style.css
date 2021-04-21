@@ -340,21 +340,6 @@ main{
   0% {opacity:0;}
   100% {opacity:1;}
 }
-@keyframes anim {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}@keyframes anim {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-@keyframes anim {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-@keyframes anim {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
 
 
 
@@ -451,6 +436,10 @@ main{
   background-color: #99E2D0;
   transform-origin: right;
   color: white;
+}
+
+.ajoutplat i{
+  font-size: 18px;
 }
 
 .menu_bouton{
